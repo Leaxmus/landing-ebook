@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ejercicio Casero para Programadores</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <style type="text/tailwindcss">
+            body {
+                font-family: 'Space Grotesk', sans-serif;
+            }
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+        </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+            extend: {
+                colors: {
+                "primary": "#0A84FF",
+                "background-light": "#f6f7f8",
+                "background-dark": "#1C1C1E",
+                "green-accent": "#30D158"
+                },
+                fontFamily: {
+                "display": ["Space Grotesk"]
+                },
+                borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+            },
+            },
+        }
+        </script>
+    <style>
+        body {
+        min-height: max(884px, 100dvh);
+        }
+    </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative w-full flex-col group/design-root overflow-x-hidden">
+    <!-- Hero Section -->
+    <div class="w-full max-w-2xl mx-auto">
+    <div class="flex flex-col gap-6 px-4 py-10 sm:gap-8 sm:py-16">
+    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg sm:aspect-video" data-alt="Portada del e-book de ejercicios para programadores con ilustraciones de estiramientos" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTpxWTyza4FZlI7723hoJw0PevgHZZbLQb9icyxPByDodENacR0njPJ69u4Dxwu_yhoDLQn65Ajb1EBN9WYMtqPyNbFylkB2bwv6JHVHxIiDkgXIIfr6_h_6KPP-q1bGXEfuVzo3BA2o0BFtyY0PhaxDnZojELaOIZ12Rdw9wWSL5ciBzzko1PeC6FSKmK9eS0z9NI1SFpjPXz1ZZlzl8Ngu6IRx6cxZilzZMHOgCEs8NZWqEKCvQHf8AC8uSjO3T7nFFYaB4m8zQA");'></div>
+    <div class="flex flex-col gap-6 sm:gap-8">
+    <div class="flex flex-col gap-2 text-left">
+    <h1 class="text-gray-900 dark:text-white text-4xl font-bold leading-tight tracking-tighter sm:text-5xl">
+                                Ejercicio Casero para Programadores
+                            </h1>
+    <h2 class="text-gray-600 dark:text-[#E5E5EA] text-base font-normal leading-normal sm:text-lg">
+                                Combate el sedentarismo y aumenta tu energía sin salir de casa. Tu guía para una vida más saludable frente al código.
+                            </h2>
+    </div>
+    <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide sm:h-14 sm:text-lg" href="#download-form">
+    <span class="truncate">Descargar gratis</span>
+    </a>
+    </div>
+    </div>
+    </div>
+    <!-- Benefits Section -->
+    <div class="w-full max-w-2xl mx-auto px-4 py-10 sm:py-16">
+    <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-tight pb-6">¿Por qué necesitas esta guía?</h2>
+    <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-4 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg min-h-[72px]">
+    <div class="text-white flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+    <span class="material-symbols-outlined text-primary text-3xl">self_improvement</span>
+    </div>
+    <div class="flex flex-col justify-center">
+    <p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Mejora tu postura</p>
+    <p class="text-gray-600 dark:text-[#E5E5EA] text-sm font-normal leading-normal line-clamp-2">Reduce la tensión en tu espalda y cuello con ejercicios específicos.</p>
+    </div>
+    <div class="shrink-0 ml-auto">
+    <div class="flex size-7 items-center justify-center"><div class="size-3 rounded-full bg-green-accent"></div></div>
+    </div>
+    </div>
+    <div class="flex items-center gap-4 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg min-h-[72px]">
+    <div class="text-white flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+    <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+    </div>
+    <div class="flex flex-col justify-center">
+    <p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Aumenta tu concentración</p>
+    <p class="text-gray-600 dark:text-[#E5E5EA] text-sm font-normal leading-normal line-clamp-2">Pausas activas que oxigenan tu cerebro y mejoran el enfoque.</p>
+    </div>
+    </div>
+    <div class="flex items-center gap-4 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg min-h-[72px]">
+    <div class="text-white flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
+    <span class="material-symbols-outlined text-primary text-3xl">sentiment_calm</span>
+    </div>
+    <div class="flex flex-col justify-center">
+    <p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Reduce el estrés</p>
+    <p class="text-gray-600 dark:text-[#E5E5EA] text-sm font-normal leading-normal line-clamp-2">Libera endorfinas y maneja mejor la presión de los plazos de entrega.</p>
+    </div>
+    <div class="shrink-0 ml-auto">
+    <div class="flex size-7 items-center justify-center"><div class="size-3 rounded-full bg-green-accent"></div></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Content Section -->
+    <div class="w-full max-w-2xl mx-auto px-4 py-10 sm:py-16">
+    <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-tight pb-6">¿Qué encontrarás dentro?</h2>
+    <div class="flex flex-col gap-4">
+    <div class="flex items-start gap-4">
+    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
+    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Rutinas rápidas y efectivas de 15 minutos para integrar en tu jornada laboral.</p>
+    </div>
+    <div class="flex items-start gap-4">
+    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
+    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Ejercicios de estiramiento para cuello, hombros y espalda diseñados para aliviar la tensión.</p>
+    </div>
+    <div class="flex items-start gap-4">
+    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
+    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Consejos prácticos de ergonomía para optimizar tu espacio de trabajo y prevenir lesiones.</p>
+    </div>
+    <div class="flex items-start gap-4">
+    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
+    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Técnicas de respiración para reducir el estrés y mejorar la claridad mental.</p>
+    </div>
+    </div>
+    </div>
+    <!-- Download Form Section -->
+    <div class="w-full max-w-2xl mx-auto px-4 py-10 sm:py-16" id="download-form">
+    <div class="bg-gray-100 dark:bg-gray-800/50 p-6 rounded-lg text-center">
+    <h2 class="text-gray-900 dark:text-white text-2xl font-bold leading-tight tracking-tight mb-2">¡Obtén tu copia gratuita ahora!</h2>
+    <p class="text-gray-600 dark:text-[#E5E5EA] mb-6">Completa el formulario para recibir el e-book directamente en tu correo.</p>
+    <form class="flex flex-col gap-4">
+    <input class="w-full h-12 px-4 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-full text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tu Nombre" type="text"/>
+    <input class="w-full h-12 px-4 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-full text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tu Correo Electrónico" type="email"/>
+    <button class="flex items-center justify-center w-full rounded-full h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide sm:h-14 sm:text-lg" type="submit">
+    <span class="truncate">Enviar mi E-book</span>
+    </button>
+    </form>
+    </div>
+    </div>
+    </div>
+</body></html>
