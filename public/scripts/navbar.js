@@ -4,9 +4,9 @@ var navcontent = document.getElementById("nav-content");
 var navaction = document.getElementById("navAction");
 var brandname = document.getElementById("brandname");
 var toToggle = document.querySelectorAll(".toggleColour");
-var inicio = document.getElementById("inicio");
-var informacion = document.getElementById("informacion");
-var testimonios = document.getElementById("testimonios");
+var inicio = document.getElementById("inicio_text");
+var informacion = document.getElementById("informacion_text");
+var testimonios = document.getElementById("testimonios_text");
 
 document.addEventListener("scroll", function () {
   scrollpos = window.scrollY;
@@ -68,11 +68,17 @@ function check(e) {
     if (checkParent(target, navMenu)) {
       if (navMenuDiv.classList.contains("hidden")) {
         navMenuDiv.classList.remove("hidden");
+        navcontent.classList.remove("bg-transparent");
+        navcontent.classList.add("bg-white");
       } else {
         navMenuDiv.classList.add("hidden");
+        navcontent.classList.remove("bg-white");
+        navcontent.classList.add("bg-transparent");
       }
     } else {
       navMenuDiv.classList.add("hidden");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-transparent");
     }
   }
 }
