@@ -14,6 +14,12 @@ var toToggle = document.querySelectorAll(".toggleColour");
 var navMenuDiv = document.getElementById("nav-content");
 var navMenu = document.getElementById("nav-toggle");
 
+[inicio, informacion, testimonios, navaction].forEach(item => {
+  item.addEventListener("click", () => {
+    closeMenu();
+  });
+});
+
 function setNavTexts(addClass, removeClass) {
   [inicio, informacion, testimonios].forEach(el => {
     el.classList.add(addClass);
