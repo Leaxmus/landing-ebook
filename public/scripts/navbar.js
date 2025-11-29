@@ -15,8 +15,12 @@ document.addEventListener("scroll", function () {
     header.classList.add("bg-white");
     brandname.classList.remove("text-white");
     brandname.classList.add("text-pink-600");    
-    inicio, informacion, testimonios.classList.remove("text-white");
-    inicio, informacion, testimonios.classList.add("text-black");
+    inicio.classList.remove("text-white");
+    informacion.classList.remove("text-white");
+    testimonios.classList.remove("text-white");
+    inicio.classList.add("text-black");
+    informacion.classList.add("text-black");
+    testimonios.classList.add("text-black");
     navaction.classList.remove("bg-white");
     navaction.classList.add("gradient");
     navaction.classList.remove("text-gray-800");
@@ -27,13 +31,15 @@ document.addEventListener("scroll", function () {
       toToggle[i].classList.remove("text-white");
     }
     header.classList.add("shadow");
-    navcontent.classList.remove("bg-gray-100");
+    navcontent.classList.remove("bg-transparent");
     navcontent.classList.add("bg-white");
   } else {
     header.classList.remove("bg-white");
     brandname.classList.remove("text-pink-600");
     brandname.classList.add("text-white");
-    inicio, informacion, testimonios.classList.remove("text-black");
+    inicio.classList.remove("text-black");
+    informacion.classList.remove("text-black");
+    testimonios.classList.remove("text-black");
     inicio, informacion, testimonios.classList.add("text-white");
     navaction.classList.remove("gradient");
     navaction.classList.add("bg-white");
@@ -46,7 +52,7 @@ document.addEventListener("scroll", function () {
     }
     header.classList.remove("shadow");
     navcontent.classList.remove("bg-white");
-    navcontent.classList.add("bg-gray-100");
+    navcontent.classList.add("bg-transparent");
   }
 });
 
