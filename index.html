@@ -1,109 +1,334 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html class="dark" lang="es"><head>
-    <meta charset="utf-8" />
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ejercicio Casero para Programadores</title>
-  <link rel="stylesheet" href="/src/style.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>
+    Ejercicio Casero para Desarroladores
+  </title>
+  <meta name="description" content="landing page de ejecicio para programadores" />
+  <meta name="keywords" content="ejercicio, programadores, fit, dev" />
+  <meta name="author" content="smeza" />
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  <style>
+    .gradient {
+      background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    }
+  </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display">
-    <div class="relative w-full flex-col group/design-root overflow-x-hidden">
-    <!-- Hero Section -->
-    <div class="w-full max-w-2xl mx-auto">
-    <div class="flex flex-col gap-6 px-4 py-10 sm:gap-8 sm:py-16">
-    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg sm:aspect-video" data-alt="Portada del e-book de ejercicios para programadores con ilustraciones de estiramientos" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDTpxWTyza4FZlI7723hoJw0PevgHZZbLQb9icyxPByDodENacR0njPJ69u4Dxwu_yhoDLQn65Ajb1EBN9WYMtqPyNbFylkB2bwv6JHVHxIiDkgXIIfr6_h_6KPP-q1bGXEfuVzo3BA2o0BFtyY0PhaxDnZojELaOIZ12Rdw9wWSL5ciBzzko1PeC6FSKmK9eS0z9NI1SFpjPXz1ZZlzl8Ngu6IRx6cxZilzZMHOgCEs8NZWqEKCvQHf8AC8uSjO3T7nFFYaB4m8zQA");'></div>
-    <div class="flex flex-col gap-6 sm:gap-8">
-    <div class="flex flex-col gap-2 text-left">
-    <h1 class="text-gray-900 dark:text-white text-4xl font-bold leading-tight tracking-tighter sm:text-5xl">
-                                Ejercicio Casero para Programadores
-                            </h1>
-    <h2 class="text-gray-600 dark:text-[#E5E5EA] text-base font-normal leading-normal sm:text-lg">
-                                Combate el sedentarismo y aumenta tu energía sin salir de casa. Tu guía para una vida más saludable frente al código.
-                            </h2>
+<body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
+  <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <div class="w-full container mx-auto flex flex-nowrap items-center justify-between mt-0 py-2">
+      <div class="pl-4 flex items-center">
+        <a id="brandname" class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center gap-2"
+          href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-heartbeat">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M19.5 13.572l-7.5 7.428l-2.896 -2.868m-6.117 -8.104a5 5 0 0 1 9.013 -3.022a5 5 0 1 1 7.5 6.572" />
+            <path d="M3 13h2l2 3l2 -6l1 3h3" />
+          </svg>
+          FitDev
+        </a>
+      </div>
+
+      <div class="block lg:hidden pr-4">
+        <button id="nav-toggle"
+          class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="nav-content"
+        class="absolute right-0 top-14 hidden lg:static lg:flex lg:items-center lg:w-auto bg-transparent text-black shadow-lg lg:shadow-none p-4 lg:p-0 z-50 rounded-lg">
+
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <li class="mr-3">
+            <a id="inicio_text" class="inline-block py-2 px-4 text-white font-bold no-underline" href="#">
+              Inicio
+            </a>
+          </li>
+          <li class="mr-3">
+            <a id="informacion_text" class="inline-block text-white no-underline hover:text-gray-800 py-2 px-4" href="#info">
+              Información
+            </a>
+          </li>
+          <li class="mr-3">
+            <a id="testimonios_text" class="inline-block text-white no-underline hover:text-gray-800 py-2 px-4" href="#testimonios">
+              Testimonios
+            </a>
+          </li>
+        </ul>
+
+        <a href="#ebook" id="navAction"
+          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full py-3 px-6 shadow focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+          Obtén tu ebook
+        </a>
+      </div>
+
     </div>
-    <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide sm:h-14 sm:text-lg" href="#download-form">
-    <span class="truncate">Descargar gratis</span>
-    </a>
+
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+  </nav>
+
+  <div class="pt-24">
+    <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+        <p class="uppercase tracking-loose w-full">Ejercicio para desarroladores</p>
+        <h1 class="my-4 text-5xl font-bold leading-tight">
+          Activa tu cuerpo en las pausas de código
+        </h1>
+        <p class="leading-normal text-2xl mb-8">
+          Ejercicios sencillos para mantenerte en forma sin salir de tu hogar
+        </p>
+        <a href="#ebook" id="navAction"
+          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          Obtén tu ebook
+        </a>
+      </div>
+      <div class="w-full md:w-3/5 py-6 text-center">
+        <img class="w-full md:w-4/5 z-50" src="/src/img/training.png" />
+      </div>
     </div>
+  </div>
+  <div class="relative -mt-12 lg:-mt-24">
+    <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+          <path
+            d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+            opacity="0.100000001"></path>
+          <path
+            d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+            opacity="0.100000001"></path>
+          <path
+            d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+            id="Path-4" opacity="0.200000003"></path>
+        </g>
+        <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+          <path
+            d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z">
+          </path>
+        </g>
+      </g>
+    </svg>
+  </div>
+  <section id="info" class="bg-white border-b py-8">
+    <div class="container max-w-5xl mx-auto m-8">
+      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+        E-book FitDev
+      </h2>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <div class="flex flex-wrap">
+        <div class="w-5/6 sm:w-1/2 p-6">
+          <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+            Por qué necesitas este e-book
+          </h3>
+          <p class="text-gray-600 mb-8">
+            Pasar horas frente al computador puede generar dolores, fatiga y pérdida de movilidad. Mantenerse activo no
+            solo mejora la salud física, sino también la concentración y el rendimiento diario. Este e-book reúne
+            ejercicios simples, rápidos y diseñados especialmente para programadores, ofreciéndote una forma práctica de
+            cuidar tu cuerpo sin interrumpir tu rutina laboral.
+          </p>
+        </div>
+        <div class="w-full sm:w-1/2 p-6">
+          <img class="w-full md:w-4/5 z-50" src="/src/img/developer.png" />
+        </div>
+      </div>
+      <div class="flex flex-wrap flex-col-reverse sm:flex-row">
+        <div class="w-full sm:w-1/2 p-6 mt-6">
+          <img class="w-full md:w-4/5 z-50" src="/src/img/fitcouple.png" />
+        </div>
+        <div class="w-full sm:w-1/2 p-6 mt-6">
+          <div class="align-middle">
+            <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+              ¿Qué encontrarás dentro del e-book?
+            </h3>
+            <p class="text-gray-600 mb-8">
+              Este e-book reúne una selección de ejercicios simples y efectivos que puedes realizar en casa, sin equipo
+              y en pocos minutos. Incluye rutinas diseñadas para aliviar dolores comunes, mejorar la postura y aumentar
+              tu movilidad, junto con recomendaciones prácticas para mantenerte activo incluso en jornadas laborales
+              exigentes.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+  <section id="testimonios" class="bg-white border-b py-8">
+    <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+      <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+        Testimonios
+      </h2>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="flex flex-wrap">
+            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              Desarrolladora Frontend
+            </p>
+            <div class="w-full font-bold text-xl text-gray-800 px-6">
+              Laura Méndez
+            </div>
+            <p class="text-gray-800 text-base px-6 mb-5">
+              “Pasaba horas sentada sin darme cuenta. Con este e-book empecé a moverme más y mis dolores de espalda
+              disminuyeron muchísimo. Es práctico y va directo al grano.”
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="flex flex-wrap">
+            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              Ingeniero de Software
+            </p>
+            <div class="w-full font-bold text-xl text-gray-800 px-6">
+              Diego Arcos
+            </div>
+            <p class="text-gray-800 text-base px-6 mb-5">
+              “Las rutinas son cortas y perfectas para hacer entre tareas. No pensé que algo tan sencillo pudiera
+              mejorar tanto mi energía durante el día.”
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+        <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
+          <div class="flex flex-wrap">
+            <p class="w-full text-gray-600 text-xs md:text-sm px-6">
+              Desarrolladora Full Stack
+            </p>
+            <div class="w-full font-bold text-xl text-gray-800 px-6">
+              Sofía Ruales
+            </div>
+            <p class="text-gray-800 text-base px-6 mb-5">
+              “Siempre postergaba el ejercicio porque sentía que no tenía tiempo. Este e-book me mostró que solo
+              necesito unos minutos al día para sentirme mejor.”
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Benefits Section -->
-    <div class="w-full max-w-2xl mx-auto px-4 py-10 sm:py-16">
-    <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-tight pb-6">¿Por qué necesitas esta guía?</h2>
-    <div class="flex flex-col gap-2">
-    <div class="flex items-center gap-4 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg min-h-[72px]">
-    <div class="text-white flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
-    <span class="material-symbols-outlined text-primary text-3xl">self_improvement</span>
+  </section>
+  <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+        <g class="wave" fill="#f8fafc">
+          <path
+            d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z">
+          </path>
+        </g>
+        <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+          <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+            <path
+              d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+              opacity="0.100000001"></path>
+            <path
+              d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+              opacity="0.100000001"></path>
+            <path
+              d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+              opacity="0.200000003"></path>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+  <section id="ebook" class="container mx-auto text-center py-6 mb-12">
+    <h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">Activa tu cuerpo en las pausas de
+      código</h2>
+    <div class="w-full mb-4">
+      <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
     </div>
-    <div class="flex flex-col justify-center">
-    <p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Mejora tu postura</p>
-    <p class="text-gray-600 dark:text-[#E5E5EA] text-sm font-normal leading-normal line-clamp-2">Reduce la tensión en tu espalda y cuello con ejercicios específicos.</p>
-    </div>
-    <div class="shrink-0 ml-auto">
-    <div class="flex size-7 items-center justify-center"><div class="size-3 rounded-full bg-green-accent"></div></div>
-    </div>
-    </div>
-    <div class="flex items-center gap-4 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg min-h-[72px]">
-    <div class="text-white flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
-    <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
-    </div>
-    <div class="flex flex-col justify-center">
-    <p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Aumenta tu concentración</p>
-    <p class="text-gray-600 dark:text-[#E5E5EA] text-sm font-normal leading-normal line-clamp-2">Pausas activas que oxigenan tu cerebro y mejoran el enfoque.</p>
-    </div>
-    </div>
-    <div class="flex items-center gap-4 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg min-h-[72px]">
-    <div class="text-white flex items-center justify-center rounded-lg bg-primary/20 shrink-0 size-12">
-    <span class="material-symbols-outlined text-primary text-3xl">sentiment_calm</span>
-    </div>
-    <div class="flex flex-col justify-center">
-    <p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">Reduce el estrés</p>
-    <p class="text-gray-600 dark:text-[#E5E5EA] text-sm font-normal leading-normal line-clamp-2">Libera endorfinas y maneja mejor la presión de los plazos de entrega.</p>
-    </div>
-    <div class="shrink-0 ml-auto">
-    <div class="flex size-7 items-center justify-center"><div class="size-3 rounded-full bg-green-accent"></div></div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <!-- Content Section -->
-    <div class="w-full max-w-2xl mx-auto px-4 py-10 sm:py-16">
-    <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-tight pb-6">¿Qué encontrarás dentro?</h2>
-    <div class="flex flex-col gap-4">
-    <div class="flex items-start gap-4">
-    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
-    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Rutinas rápidas y efectivas de 15 minutos para integrar en tu jornada laboral.</p>
-    </div>
-    <div class="flex items-start gap-4">
-    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
-    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Ejercicios de estiramiento para cuello, hombros y espalda diseñados para aliviar la tensión.</p>
-    </div>
-    <div class="flex items-start gap-4">
-    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
-    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Consejos prácticos de ergonomía para optimizar tu espacio de trabajo y prevenir lesiones.</p>
-    </div>
-    <div class="flex items-start gap-4">
-    <span class="material-symbols-outlined text-green-accent mt-1">check_circle</span>
-    <p class="text-gray-600 dark:text-[#E5E5EA] flex-1">Técnicas de respiración para reducir el estrés y mejorar la claridad mental.</p>
-    </div>
-    </div>
-    </div>
-    <!-- Download Form Section -->
-    <div class="w-full max-w-2xl mx-auto px-4 py-10 sm:py-16" id="download-form">
-    <div class="bg-gray-100 dark:bg-gray-800/50 p-6 rounded-lg text-center">
-    <h2 class="text-gray-900 dark:text-white text-2xl font-bold leading-tight tracking-tight mb-2">¡Obtén tu copia gratuita ahora!</h2>
-    <p class="text-gray-600 dark:text-[#E5E5EA] mb-6">Completa el formulario para recibir el e-book directamente en tu correo.</p>
-    <form class="flex flex-col gap-4">
-    <input class="w-full h-12 px-4 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-full text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tu Nombre" type="text"/>
-    <input class="w-full h-12 px-4 bg-white dark:bg-gray-700 border-gray-300 dark:border-gray-600 rounded-full text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tu Correo Electrónico" type="email"/>
-    <button class="flex items-center justify-center w-full rounded-full h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-wide sm:h-14 sm:text-lg" type="submit">
-    <span class="truncate">Enviar mi E-book</span>
-    </button>
+    <h3 class="my-4 text-3xl leading-tight">Ejercicios sencillos para mantenerte en forma sin salir de tu hogar</h3>
+
+    //TODO cambiar la URL de action al link de firebase
+    <form id="ebookForm" action="https://firebase-database-url.com/submit" method="POST"
+      class="max-w-lg mx-auto bg-white text-gray-800 p-6 rounded-2xl shadow-md">
+      <div class="mb-4 text-left">
+        <label class="block font-bold mb-2">Nombre</label>
+        <input type="text" id="nombre" name="nombre" class="w-full p-3 border rounded" placeholder="Ingresa tu nombre"
+          required>
+      </div>
+
+
+      <div class="mb-4 text-left">
+        <label class="block font-bold mb-2">Edad</label>
+        <select id="edad" name="edad" class="w-full p-3 border rounded" required>
+          <option value="">Selecciona tu edad</option>
+          <option value="18-25">18-25</option>
+          <option value="26-35">26-35</option>
+          <option value="36-45">36-45</option>
+          <option value="46+">46+</option>
+        </select>
+      </div>
+
+
+      <div class="mb-4 text-left">
+        <label class="block font-bold mb-2">Correo</label>
+        <input type="email" id="correo" name="correo" class="w-full p-3 border rounded" placeholder="Ingresa tu correo"
+          required>
+      </div>
     </form>
+
+
+    <button id="submitBtn"
+      class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out opacity-50 cursor-not-allowed"
+      disabled>Obtén tu ebook</button>
+  </section>
+  <footer class="bg-white">
+    <div class="container mx-auto px-8">
+      <div class="w-full flex flex-col md:flex-row py-6">
+        <div class="pl-4 pr-8 flex items-left">
+          <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center gap-2"
+            href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-heartbeat">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M19.5 13.572l-7.5 7.428l-2.896 -2.868m-6.117 -8.104a5 5 0 0 1 9.013 -3.022a5 5 0 1 1 7.5 6.572" />
+              <path d="M3 13h2l2 3l2 -6l1 3h3" />
+            </svg>
+            FitDev
+          </a>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">Autor</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a class="no-underline hover:underline text-gray-800 hover:text-pink-500">Samuel Meza</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-1">
+          <p class="uppercase text-gray-500 md:mb-6">Fitdevs</p>
+          <ul class="list-reset mb-6">
+            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+              <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Lista</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-    <script type="module" src="/src/main.js"></script>
+  </footer>
+  <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/form.js"></script>
 </body>
+
 </html>
