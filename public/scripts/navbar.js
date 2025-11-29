@@ -4,12 +4,19 @@ var navcontent = document.getElementById("nav-content");
 var navaction = document.getElementById("navAction");
 var brandname = document.getElementById("brandname");
 var toToggle = document.querySelectorAll(".toggleColour");
+var inicio = document.getElementById("inicio");
+var informacion = document.getElementById("informacion");
+var testimonios = document.getElementById("testimonios");
 
 document.addEventListener("scroll", function () {
   scrollpos = window.scrollY;
 
   if (scrollpos > 10) {
     header.classList.add("bg-white");
+    brandname.classList.remove("text-white");
+    brandname.classList.add("text-pink-600");    
+    inicio, informacion, testimonios.classList.remove("text-white");
+    inicio, informacion, testimonios.classList.add("text-black");
     navaction.classList.remove("bg-white");
     navaction.classList.add("gradient");
     navaction.classList.remove("text-gray-800");
@@ -24,6 +31,10 @@ document.addEventListener("scroll", function () {
     navcontent.classList.add("bg-white");
   } else {
     header.classList.remove("bg-white");
+    brandname.classList.remove("text-pink-600");
+    brandname.classList.add("text-white");
+    inicio, informacion, testimonios.classList.remove("text-black");
+    inicio, informacion, testimonios.classList.add("text-white");
     navaction.classList.remove("gradient");
     navaction.classList.add("bg-white");
     navaction.classList.remove("text-white");
@@ -39,7 +50,6 @@ document.addEventListener("scroll", function () {
   }
 });
 
-/* Toggle dropdown list */
 var navMenuDiv = document.getElementById("nav-content");
 var navMenu = document.getElementById("nav-toggle");
 

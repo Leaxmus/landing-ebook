@@ -23,8 +23,8 @@
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
   <nav id="header" class="fixed w-full z-30 top-0 text-white bg-white shadow">
     <div class="w-full container mx-auto flex flex-nowrap items-center justify-between mt-0 py-2">
-      <div class="pl-4 flex items-center">
-        <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center gap-2"
+      <div id="brandname" class="pl-4 flex items-center">
+        <a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center gap-2"
           href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -48,32 +48,32 @@
       </div>
 
       <div id="nav-content"
-        class="flex-grow hidden lg:flex lg:items-center lg:w-auto mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20">
+        class="absolute right-0 top-14 hidden lg:static lg:flex lg:items-center lg:w-auto bg-white text-black shadow-lg lg:shadow-none p-4 lg:p-0 z-50 rounded-lg">
 
         <ul class="list-reset lg:flex justify-end flex-1 items-center">
           <li class="mr-3">
-            <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">
+            <a id="inicio" class="inline-block py-2 px-4 text-white font-bold no-underline" href="#">
               Inicio
             </a>
           </li>
           <li class="mr-3">
-            <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4" href="#info">
+            <a id="informacion" class="inline-block text-white no-underline hover:text-gray-800 py-2 px-4" href="#info">
               Información
             </a>
           </li>
           <li class="mr-3">
-            <a class="inline-block text-black no-underline hover:text-gray-800 py-2 px-4" href="#testimonios">
+            <a id="testimonios" class="inline-block text-white no-underline hover:text-gray-800 py-2 px-4" href="#testimonios">
               Testimonios
             </a>
           </li>
         </ul>
 
         <a href="#ebook" id="navAction"
-          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+          class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full py-3 px-6 shadow focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
           Obtén tu ebook
         </a>
-
       </div>
+
     </div>
 
     <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -294,7 +294,7 @@
   <footer class="bg-white">
     <div class="container mx-auto px-8">
       <div class="w-full flex flex-col md:flex-row py-6">
-        <div class="pl-4 flex items-left">
+        <div class="pl-4 pr-8 flex items-left">
           <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl flex items-center gap-2"
             href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
