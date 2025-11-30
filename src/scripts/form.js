@@ -1,6 +1,3 @@
-import { db } from "./firebase.js";
-import { collection, addDoc } from "firebase/firestore";
-
 const nombre = document.getElementById('nombre');
 const edad = document.getElementById('edad');
 const correo = document.getElementById('correo');
@@ -8,10 +5,7 @@ const submitBtn = document.getElementById('submitBtn');
 const form = document.getElementById('ebookForm');
 
 function validar() {
-    const valido =
-        nombre.value.trim() !== '' &&
-        edad.value !== '' &&
-        correo.validity.valid;
+    const valido = nombre.value.trim() !== '' && edad.value !== '' && correo.validity.valid;
 
     if (valido) {
         submitBtn.disabled = false;
@@ -27,24 +21,33 @@ edad.addEventListener('change', validar);
 correo.addEventListener('input', validar);
 
 submitBtn.addEventListener('click', async () => {
-    if (!submitBtn.disabled) {
-        await guardarEnFirestore();
+    if (submitBtn.disabled) return;
+
+    const data = {
+        nombre: nombre.value,
+        edad: edad.value,
+        correo: correo.value,
+        fecha: new Date().toISOString()
+    };
+
+    try {
+        const res = await fetch(
+            "https://ebook-landing-page-7c285-default-rtdb.firebaseio.com/usuarios.json",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            }
+        );
+
+        if (!res.ok) throw new Error("Error al guardar en Firebase");
+
+        alert("Datos guardados exitosamente");
+
         form.reset();
-        validar(); 
+        validar(); // vuelve a desactivar el botón
+    } catch (error) {
+        console.error(error);
+        alert("Hubo un problema guardando los datos.");
     }
 });
-
-async function guardarEnFirestore() {
-    try {
-        await addDoc(collection(db, "registros"), {
-            nombre: nombre.value,
-            edad: edad.value,
-            correo: correo.value,
-            fecha: new Date().toISOString()
-        });
-
-        console.log("Datos guardados exitosamente");
-    } catch (error) {
-        console.error("Error al guardar:", error);
-    }
-}
