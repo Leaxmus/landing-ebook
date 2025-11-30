@@ -1,4 +1,4 @@
-import { db } from "../firebase";
+import { db } from "./firebase.js";
 import { collection, addDoc } from "firebase/firestore";
 
 const nombre = document.getElementById('nombre');
