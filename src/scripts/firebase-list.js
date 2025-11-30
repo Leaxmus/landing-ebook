@@ -26,8 +26,8 @@ async function cargarUsuarios() {
         return `
           <div class="py-2 border-b">
             <p class="font-semibold text-gray-800">${u.nombre || "Sin nombre"}</p>
-            <p class="text-sm text-gray-600">${u.email || "Sin email"}</p>
-            <p class="text-xs text-gray-400">ID: ${id}</p>
+            <p class="text-sm text-gray-600">${u.correo || "Sin email"}</p>
+            <p class="text-xs text-gray-400">Edad: ${u.edad || "Desconocida"}</p>
           </div>
         `;
       })
