@@ -1,51 +1,61 @@
-// URL de tu realtime database
-const DB_URL = "https://ebook-landing-page-7c285-default-rtdb.firebaseio.com//usuarios.json";
+const toggleBtn = document.getElementById("toggleLista");
+const listaBox = document.getElementById("listaUsuarios");
 
-const listaBtn = document.querySelector('#listaBtn');
-const listaUsuarios = document.querySelector('#listaUsuarios');
+const FIREBASE_URL = "https://ebook-landing-page-7c285-default-rtdb.firebaseio.com/usuarios.json";
 
-listaBtn.addEventListener("click", async (e) => {
-    e.preventDefault();
+async function cargarUsuarios() {
+  try {
+    listaBox.innerHTML = `<p class="text-sm text-gray-600">Cargando usuarios…</p>`;
 
-    try {
-        const res = await fetch(DB_URL);
-        const data = await res.json();
+    const res = await fetch(FIREBASE_URL, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" }
+    });
 
-        if (!data) {
-            listaUsuarios.innerHTML = "<p>No hay usuarios registrados.</p>";
-            listaUsuarios.classList.remove("hidden");
-            return;
-        }
+    if (!res.ok) throw new Error("Error GET Firebase");
 
-        const usuariosArray = Object.entries(data).map(([id, usuario]) => ({
-            id,
-            ...usuario
-        }));
+    const data = await res.json();
 
-        renderUsuarios(usuariosArray);
-
-    } catch (error) {
-        console.error("Error al obtener usuarios:", error);
+    if (!data) {
+      listaBox.innerHTML = `<p class="text-sm text-gray-600">No hay usuarios registrados.</p>`;
+      return;
     }
+
+    listaBox.innerHTML = Object.entries(data)
+      .map(([id, u]) => {
+        return `
+          <div class="py-2 border-b">
+            <p class="font-semibold text-gray-800">${u.nombre || "Sin nombre"}</p>
+            <p class="text-sm text-gray-600">${u.email || "Sin email"}</p>
+            <p class="text-xs text-gray-400">ID: ${id}</p>
+          </div>
+        `;
+      })
+      .join("");
+
+  } catch (err) {
+    console.error(err);
+    listaBox.innerHTML = `<p class="text-sm text-red-600">Error al cargar usuarios.</p>`;
+  }
+}
+
+toggleBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const seAbre = listaBox.classList.contains("hidden");
+
+  if (seAbre) {
+    listaBox.classList.remove("hidden");
+    await cargarUsuarios();
+  } else {
+    listaBox.classList.add("hidden");
+  }
 });
 
-function renderUsuarios(usuarios) {
-    listaUsuarios.innerHTML = `
-        <h3 class="text-xl font-bold mb-3">Usuarios registrados</h3>
-        <ul>
-            ${usuarios
-                .map(
-                    u => `
-                <li class="border-b py-2">
-                    <p><strong>Nombre:</strong> ${u.nombre}</p>
-                    <p><strong>Edad:</strong> ${u.edad}</p>
-                    <p><strong>Correo:</strong> ${u.correo}</p>
-                </li>
-            `
-                )
-                .join("")}
-        </ul>
-    `;
+document.addEventListener("click", (e) => {
+  const clickDentroLista = listaBox.contains(e.target);
+  const clickEnBoton = toggleBtn.contains(e.target);
 
-    listaUsuarios.classList.remove("hidden");
-}
+  if (!clickDentroLista && !clickEnBoton) {
+    listaBox.classList.add("hidden");
+  }
+});
